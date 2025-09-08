@@ -1,0 +1,1 @@
+double desktopWidth = 800;
