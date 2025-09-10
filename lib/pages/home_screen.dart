@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
-import 'package:my_portfolio/constants/nav_items.dart';
+// import 'package:my_portfolio/constants/nav_items.dart';
 import 'package:my_portfolio/constants/size.dart';
+import 'package:my_portfolio/widgets/body_desktop.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
@@ -44,22 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
       
             ),
       
-      
-        
-               //? about
-               Container(
-                width: double.infinity,
-                height:500,
-                color: Colors.white,
-                child: Center(
-                  child: Text('About',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
-                  ),
-                  ),
-                ),
-                ),
+  
+               //? body( for introduction of the person )
+
+               BodyDesktop(),
+
         
                 //? projects
                 Container(

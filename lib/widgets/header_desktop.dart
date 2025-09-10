@@ -14,7 +14,7 @@ class HeaderDesktop extends StatelessWidget {
     return Container(
             width: double.infinity,
             height:60,
-             margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+             margin: EdgeInsets.symmetric(horizontal: 30),
              decoration: EHeaderDecoration.decoration,
                    
                     child: Row(
@@ -39,6 +39,7 @@ class HeaderDesktop extends StatelessWidget {
                           child: Text(navItems[i], 
                           style: TextStyle(
                             fontSize: 16,
+                            fontWeight: FontWeight.bold,
                             color: CustomColors.whitePrimary,
                           ),),
                         ),
