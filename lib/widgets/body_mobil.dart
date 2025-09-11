@@ -1,34 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
 
-class BodyDesktop extends StatelessWidget {
-  const BodyDesktop({super.key});
+class BodyMobil extends StatelessWidget {
+  const BodyMobil({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-                padding: EdgeInsets.only(left: 200, right: 20),
-
-                width: double.infinity,
-                height:450,
+    return Container(
+              width: double.infinity,
+                height:350,
                 color: CustomColors.scaffoldbg,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Hi \nI'm Emmanuel \nA Flutter Developer",
+                    Image.asset('assets/images/emma.png',
+                    width: 150,
+                    height: 150,
+                    ),
+                    SizedBox(height: 20,),
+                     Text("Hi \nI'm Emmanuel \nA Flutter Developer",
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: CustomColors.whitePrimary,
                           height: 1.5,
+                     
                         ),
                         ),
                         SizedBox(
-                          width: 250,
+                          width: 190,
                           height: 40,
                           child: ElevatedButton(
                             onPressed: (){}, 
@@ -48,17 +49,8 @@ class BodyDesktop extends StatelessWidget {
                             ),
                             ),
                         ),  
-
-                      ],
-                    ),
-                    Spacer(),
-                    Image.asset('assets/images/emma.png',
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    height: MediaQuery.of(context).size.height * 0.6,
-
-                    ),
                   ],
                 ),
-                );
+    );
   }
 }

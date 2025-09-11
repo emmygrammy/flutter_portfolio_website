@@ -3,9 +3,11 @@ import 'package:my_portfolio/constants/colors.dart';
 // import 'package:my_portfolio/constants/nav_items.dart';
 import 'package:my_portfolio/constants/size.dart';
 import 'package:my_portfolio/widgets/body_desktop.dart';
+import 'package:my_portfolio/widgets/body_mobil.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
+import 'package:my_portfolio/widgets/skill_desktop.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -27,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: CustomColors.scaffoldbg,
         body: ListView(
           children: [
-            //? header
+            //? header( for desktop and mobil)
             constraints.maxWidth > desktopWidth
             ?HeaderDesktop(
               onTap: (){
@@ -45,32 +47,21 @@ class _HomeScreenState extends State<HomeScreen> {
       
             ),
       
-  
+              // BodyDesktop(),
                //? body( for introduction of the person )
+               constraints.maxWidth > desktopWidth
+               ?BodyDesktop()
+               :BodyMobil(),
 
-               BodyDesktop(),
+                //? skills(for desktop and mobil)
+                Skilldesktop(),
 
-        
-                //? projects
-                Container(
-                width: double.infinity,
-                height:500,
-                color: Colors.blueGrey,
-                child: Center(
-                  child: Text('Projects',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.white,
-                  ),
-                  ),
-                ),
-                ),
-        
+      
                 //? contact
                 Container(
                 width: double.infinity,
                 height:500,
-                color: Colors.white,
+                color: CustomColors.scaffoldbg,
                 child: Center(
                   child: Text('Contact',
                   style: TextStyle(
