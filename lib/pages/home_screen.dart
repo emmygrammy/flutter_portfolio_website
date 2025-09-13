@@ -8,6 +8,7 @@ import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
 import 'package:my_portfolio/widgets/skill_desktop.dart';
+import 'package:my_portfolio/widgets/skill_mobile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,15 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
       
             ),
       
-              // BodyDesktop(),
+              
                //? body( for introduction of the person )
                constraints.maxWidth > desktopWidth
                ?BodyDesktop()
                :BodyMobil(),
 
                 //? skills(for desktop and mobil)
-                SkillDesktop(),
-                
+               constraints.maxWidth > desktopWidth
+               ?SkillDesktop()
+               :SkillMobile(),
 
       
                 //? contact

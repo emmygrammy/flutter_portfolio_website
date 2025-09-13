@@ -17,19 +17,17 @@ class SkillContainer2 extends StatelessWidget {
                     runSpacing: 10,
                     children: [
                       for(int i=0;i<programmingLanguages.length;i++)
-                      Container(
-                      padding: EdgeInsets.symmetric(horizontal: 1,),
-                      width:150,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: CustomColors.hintdark,
-                      ),
-                      child:ListTile(
-                        leading: Icon(programmingLanguages[i]['icon'],
+                      Chip(
+                        backgroundColor: CustomColors.hintdark,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+
+                        avatar: Icon(programmingLanguages[i]['icon'],
                         color: CustomColors.yellowSecondary,
                         size: 10,
                         ),
-                        title: Text(programmingLanguages[i]['name'],
+                        label: Text(programmingLanguages[i]['name'],
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
@@ -37,8 +35,6 @@ class SkillContainer2 extends StatelessWidget {
                         ),
                         ),
                       ),
-                    
-                    ),
                     ],
                   
                   ),
