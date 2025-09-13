@@ -54,7 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
                :BodyMobil(),
 
                 //? skills(for desktop and mobil)
-                Skilldesktop(),
+                SkillDesktop(),
+                
 
       
                 //? contact

@@ -1,40 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/constants/skills_constant.dart';
 
 class SkillContainer extends StatelessWidget {
-  const SkillContainer({super.key,required this.skill,required this.icon});
-  final String skill;
-  final IconData icon;
-
+  const SkillContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 50,
-                      padding: EdgeInsets.symmetric(horizontal: 10,vertical: 6),
+    return  Expanded(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: 700
+                    ),
+                  child: Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    children: [
+                      for(int i=0;i<skills.length;i++)
+                      Container(
+                      width: 300,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
                         color: CustomColors.hintdark,
-                    
+                        borderRadius: BorderRadius.circular(5),
                       ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(icon,
-                          color: CustomColors.yellowPrimary,
-                          size: 16,
-    
-                          ),
-                          SizedBox(width: 30,),
-                          Text(skill,
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: CustomColors.whitePrimary,
-                          ),
-                          ),
-                        ],
+                      child: ListTile(
+                        leading: Icon(skills[i]['icon'],
+                        color: CustomColors.yellowPrimary,
+                        size: 16,
+                        ),
+                        title: Text(skills[i]['name'],
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColors.whitePrimary,
+                        ),
+                        ),
                       ),
-                    );
+                    ),
+                  ],
+                  
+                  ),
+                ),
+              );
   }
 }
